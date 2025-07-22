@@ -1,22 +1,35 @@
-This project performs in-depth **time series analysis** and **forecasting** on monthly gold prices using **ARIMA** and **SARIMA** models. It also features a full-fledged **Streamlit app** for interactive exploration, model selection, and dynamic forecasting.
+Gold Price Forecasting App (Time Series Project with Streamlit)
+
+This project predicts future gold prices using Time Series Analysis techniques like ARIMA and SARIMA. It also includes a user-friendly Streamlit web app where you can interactively choose the model and forecast upcoming months.
+
 Project Features
-**Visualization** of trends over time
-- **STL decomposition** to separate trend, seasonality, and noise
-- **ADF test** for stationarity
-- **Differencing** to make the series stationary
-- **ACF and PACF plots** to determine model orders
-- **Model building** with ARIMA and SARIMA
 
-- Interactive Streamlit Web App:
-- Choose between ARIMA and SARIMA models
-- Forecast up to 36 months into the future
-- Visualize forecast with **confidence intervals**
+#Data & Analysis
+- Uses historical monthly gold prices (from `gold_prices.csv`)
+- Trend and seasonality analysis
+- Stationarity check using ADF Test
+- Data transformation with differencing
+- ACF & PACF plots to decide model parameters
+- Time Series modeling using ARIMA and SARIMA
+- Forecasting for up to 36 months
+- Compare model performance using AIC/BIC
 
--  ACF & PACF Interpretation Tips:
+#Streamlit App Highlights
+- Easy-to-use interface to select model (ARIMA or SARIMA)
+- Forecasting options for next 1 to 36 months
+- Visualization of predictions and confidence intervals
+- View model details and download results
 
-* ACF with spikes at seasonal lags → Add seasonal terms
-* PACF cut-off after lag p → Suggests AR model order
-* ACF cut-off after lag q → Suggests MA model order
+## Folder Structure
+├── app.py # Main Streamlit app
+├── gold_prices.csv # Dataset with historical gold prices
+├── arima_model.pkl # Trained ARIMA model (auto-generated)
+├── sarima_model.pkl # Trained SARIMA model (auto-generated)
+├── requirements.txt # List of required Python packages
+└── README.md # Project summary and instructions
+
+Install Required Libraries:pip install -r requirements.txt
+Launch the Streamlit App: streamlit run app.py
 
 Technologies
 * Python
